@@ -1,0 +1,113 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyODBPoFOp7sfyUx2XF85XHp",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Faiza926/Python-certificate-/blob/main/Numpy%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "13qr4IF6r3j6"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "def calculate(list):\n",
+        "    \"\"\"Calculates the mean, variance, standard deviation, max, min, and sum of the rows, columns, and elements in a 3 x 3 matrix.\n",
+        "\n",
+        "    Args:\n",
+        "        list: A list containing 9 digits.\n",
+        "\n",
+        "    Returns:\n",
+        "        A dictionary containing the mean, variance, standard deviation, max, min, and sum along both axes and for the flattened matrix.\n",
+        "    \"\"\"\n",
+        "\n",
+        "    if len(list) != 9:\n",
+        "        raise ValueError(\"List must contain nine numbers.\")\n",
+        "\n",
+        "    matrix = np.array(list).reshape((3, 3))\n",
+        "\n",
+        "    calculations = {\n",
+        "        'mean': [matrix.mean(axis=0).tolist(), matrix.mean(axis=1).tolist(), matrix.mean().tolist()],\n",
+        "        'variance': [matrix.var(axis=0).tolist(), matrix.var(axis=1).tolist(), matrix.var().tolist()],\n",
+        "        'standard deviation': [matrix.std(axis=0).tolist(), matrix.std(axis=1).tolist(), matrix.std().tolist()],\n",
+        "        'max': [matrix.max(axis=0).tolist(), matrix.max(axis=1).tolist(), matrix.max().tolist()],\n",
+        "        'min': [matrix.min(axis=0).tolist(), matrix.min(axis=1).tolist(), matrix.min().tolist()],\n",
+        "        'sum': [matrix.sum(axis=0).tolist(), matrix.sum(axis=1).tolist(), matrix.sum().tolist()]\n",
+        "    }\n",
+        "\n",
+        "    return calculations"
+      ],
+      "cell_type": "code",
+      "metadata": {
+        "id": "hCOTB8QRsTGg"
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "calculate ([0,1,2,3,4,5,6,7,8])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fhdTta-7tEAU",
+        "outputId": "0048decb-0206-4301-e020-6ac6732ba05a"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'mean': [[3.0, 4.0, 5.0], [1.0, 4.0, 7.0], 4.0],\n",
+              " 'variance': [[6.0, 6.0, 6.0],\n",
+              "  [0.6666666666666666, 0.6666666666666666, 0.6666666666666666],\n",
+              "  6.666666666666667],\n",
+              " 'standard deviation': [[2.449489742783178,\n",
+              "   2.449489742783178,\n",
+              "   2.449489742783178],\n",
+              "  [0.816496580927726, 0.816496580927726, 0.816496580927726],\n",
+              "  2.581988897471611],\n",
+              " 'max': [[6, 7, 8], [2, 5, 8], 8],\n",
+              " 'min': [[0, 1, 2], [0, 3, 6], 0],\n",
+              " 'sum': [[9, 12, 15], [3, 12, 21], 36]}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ]
+    }
+  ]
+}
